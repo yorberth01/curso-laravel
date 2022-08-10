@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function __invoke(){ //el metodo invoke se usa cuando queremos que el controlador administre una sola ruta
-      return "Bienvenido Al Curso de Laravel";
+      return view('home');
     }
 }
