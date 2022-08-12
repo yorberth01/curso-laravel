@@ -17,10 +17,10 @@ return new class extends Migration
         Schema::create('usuario', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->string('apellido');
-            $table->unsignedBigInteger('user_id');
+            $table->string('apellido')->nullable();
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
-             $table->unsignedBigInteger('profesiones_id');
+             $table->unsignedBigInteger('profesiones_id')->nullable();
             $table->foreign('profesiones_id')->references('id')->on('profesiones');
             $table->timestamps();
         });

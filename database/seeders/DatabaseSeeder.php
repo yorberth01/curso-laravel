@@ -14,11 +14,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        //php artisan db:seed  para correr el seeder
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+
+       $this->call(ProfesionSeeder::class);//codigo para llamar al seeder
+       $this->call(UsuarioSeeder::class);//codigo para llamar al seeder
     }
 }
