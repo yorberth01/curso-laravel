@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use App\Models\Usuario;
 
 class UsuarioSeeder extends Seeder
 {
@@ -23,6 +24,14 @@ class UsuarioSeeder extends Seeder
          DB::table('usuario')->insert([
             'nombre'=>"yorberth",
             'apellido'=>"quiroz",
+            'profesiones_id'=>$profesion_select->first()->id,
+        ]);
+
+        //ELOQUENT MODEL
+
+         Usuario::create([
+            'nombre'=>"eloquent",
+            'apellido'=>"models",
             'profesiones_id'=>$profesion_select->first()->id,
         ]);
     }

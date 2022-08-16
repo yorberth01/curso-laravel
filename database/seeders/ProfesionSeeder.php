@@ -6,6 +6,8 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
+use App\Models\Profesion;
+
 class ProfesionSeeder extends Seeder
 {
     /**
@@ -35,5 +37,14 @@ class ProfesionSeeder extends Seeder
         DB::insert('INSERT INTO usuario (nombre) VALUES ("jose")'); //de esta forma se pueden hacer consultas sql
         //DB::insert('INSERT INTO usuario (nombre) VALUES (?)', ['jose']);
         //DB::insert('INSERT INTO usuario (nombre) VALUES (:nombre)', ['nombre' => 'jose']);
+
+
+        //ELOQUENTS MODEL
+         Profesion::create([
+            'titulo'=>'prueba con eloquent model',
+         ]);
     }
+
+
+
 }

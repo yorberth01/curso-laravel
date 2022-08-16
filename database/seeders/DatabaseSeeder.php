@@ -19,5 +19,6 @@ class DatabaseSeeder extends Seeder
 
        $this->call(ProfesionSeeder::class);//codigo para llamar al seeder
        $this->call(UsuarioSeeder::class);//codigo para llamar al seeder
+       $this->call(CursoSeeder::class);//codigo para llamar al seeder
     }
 }
