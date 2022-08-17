@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Curso extends Model
 {
-    // use App\Models\Curso  se coloca esto en la terminal tinker para indicar que quiero hacer uso del modelo especificado,  para entrar en la terminal tinker se debe colocar php artisn tinker
+    // use App\Models\Curso  se coloca esto en la terminal tinker para indicar que quiero hacer uso del modelo especificado,  para entrar en la terminal tinker se debe colocar php artisan tinker
 /*
 use App\Models\Curso;
 $curso=new Curso;

@@ -15,9 +15,11 @@ class CursoSeeder extends Seeder
      */
     public function run()
     {
-        $curso=new Curso;
+        /*$curso=new Curso;
         $curso->nombre="prueba con seeder";
         $curso->apellido="laravel-seeder";
-        $curso->save();
+        $curso->save();*/
+
+        Curso::factory(50)->create(); //cuando se realiza un factory esta linea de codigo se puede colocar directamente en el DatabaseSeeder  sin la nesecidad de crear un nuevo seeder para cada factory
     }
 }

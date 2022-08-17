@@ -5,12 +5,27 @@
 @section('contenido')
             <h1>Prueba con la Vista USUARIOS</h1>
 
-    <?php foreach ($usuariosArray as $key): ?>
+            <a href="{{route('usuarios.create')}}">Crear Usuaio</a>
 
+            <ul>
+                @foreach ($usuarios as $item)
+                    <li>
+                       <a href="{{route('usuarios.show', $item->id)}}">{{$item->nombre}}</a>
+                    </li>
+
+                @endforeach
+            </ul>
+
+
+            {{-- //para agregar la paginacion --}}
+            {{$usuarios->links()}}
+
+
+    {{-- <?php foreach ($usuariosArray as $key): ?>
          <li> <?php echo $key;  ?> </li>
+    <?php endforeach; ?> --}}
 
 
-    <?php endforeach; ?>
 @endsection
 
 

@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsuarioController;
-use App\Http\Controllers\HomeController; //instalando la extencion php intelephan y poniendo use + nombre del controlador se autocompleta o simplemente escribiendo el controlador en la ruta 
+use App\Http\Controllers\HomeController; //instalando la extencion php intelephan y poniendo use + nombre del controlador se autocompleta o simplemente escribiendo el controlador en la ruta
 
 /*
 |--------------------------------------------------------------------------
@@ -17,12 +17,12 @@ use App\Http\Controllers\HomeController; //instalando la extencion php intelepha
 
 Route::get('/', HomeController::class);//php artisan make:controller ExampleComtroller/ como solo se usa una sola llama para este controlador se usa el metodo invoke y no se pone el nombre de la clase
 
-Route::get('/usuarios', [UsuarioController::class, 'index']);
+Route::get('/usuarios', [UsuarioController::class, 'index'])->name('usuarios.index');//se le coloca el metodo mane para despues hacer el llamado con las url;
 
-Route::get('/usuarios/{id}', [UsuarioController::class, 'show'])->where('id','[0-9]+'); //condicion para validar que el valor del parametro id sea solo numerico y salte a la siguiente ruta
+Route::get('/usuarios/{id}', [UsuarioController::class, 'show'])->where('id','[0-9]+')->name('usuarios.show'); //condicion para validar que el valor del parametro id sea solo numerico y salte a la siguiente ruta
 
 
-Route::get('/usuarios/nuevo', [UsuarioController::class, 'create']);
+Route::get('/usuarios/nuevo', [UsuarioController::class, 'create'])->name('usuarios.create');
 
 /*
 AGRUPAR RUTAS CON UN MISMO CONTROLADOR
@@ -39,6 +39,6 @@ Route::get('/saludo/{name}/{nickname?}', function($name, $nickname=null){// el s
     return "Bienvenido {$name}, tu apodo es: {$nickname}";
   }else{
     return "Bienvenido {$name}";
-  } 
+  }
 });
 

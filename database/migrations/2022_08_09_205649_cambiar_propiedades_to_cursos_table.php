@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::table('cursos', function (Blueprint $table) {
             //composer require doctrine/dbal    primero se pone este comando en la terminal y despues php artisan make:migration cambiar_propiedades_to_cursos_table
-            $table->string('nombre', 20)->nullable()->change();
+            $table->string('nombre', 150)->nullable()->change();
         });
     }
 
