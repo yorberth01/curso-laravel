@@ -23,6 +23,11 @@ Route::get('/usuarios/{id}', [UsuarioController::class, 'show'])->where('id','[0
 
 
 Route::get('/usuarios/nuevo', [UsuarioController::class, 'create'])->name('usuarios.create');
+Route::post('/usuarios', [UsuarioController::class, 'store'])->name('usuarios.store');//Esta ruta se encanga de recivir la informacion enviada del formulario de nuevo usuario
+
+Route::get('/usuarios/{id}/editar', [UsuarioController::class, 'edit'])->where('id','[0-9]+')->name('usuarios.edit');//esta ruta recive la informacion por url para poder editar la informacion de la base de datos
+
+Route::put('/usuarios/{id}', [UsuarioController::class, 'update'])->name('usuarios.update');//el metodo put se utiliza cuando se va a actualizar un registro
 
 /*
 AGRUPAR RUTAS CON UN MISMO CONTROLADOR
