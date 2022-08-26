@@ -14,13 +14,23 @@
 
           <label>
             Nombre:
-            <input type="text" name="nombre" value="{{$id->nombre}}">
+            <input type="text" name="nombre" value="{{old('nombre', $id->nombre)}}">
           </label><br><br>
+
+          @error('nombre') {{-- se coloca @error para poder mandar un mensaje de error --}}
+              <small>*{{$message}}</small>
+              <br>
+          @enderror
 
           <label>
             Apellido:
-            <input type="text" name="apellido" value="{{$id->apellido}}">
+            <input type="text" name="apellido" value="{{old('apellido', $id->apellido)}}">
           </label><br><br>
+
+          @error('apellido') {{-- se coloca @error para poder mandar un mensaje de error --}}
+              <small>*{{$message}}</small>
+              <br>
+          @enderror
 
           <button type="submit">Editar</button>
         </form>

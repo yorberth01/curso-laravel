@@ -26,6 +26,13 @@ class UsuarioController extends Controller
     }
 
     public function store(Request $request){
+
+
+      $request->validate([//se coloca esta linea de codigo para poder validar el formulario de nuevo usuario
+        'nombre' => 'required|max:10',//asi se coloca si se quiere poner mas de una validacion
+        'apellido' => 'required|min:3'
+      ]);
+
       // return $request->all(); //con este metodo puedo ver todo el objeto que se recive desde el formulario
       $nuevo_usuario = new Usuario();
 
@@ -54,6 +61,13 @@ class UsuarioController extends Controller
     }
 
     public function update(Request $request, Usuario $id){
+      
+      $request->validate([//se coloca esta linea de codigo para poder validar el formulario de nuevo usuario
+        'nombre' => 'required',
+        'apellido' => 'required'
+      ]);
+
+
       //return $id;
       //return $request;
       $id->nombre=$request->nombre;
