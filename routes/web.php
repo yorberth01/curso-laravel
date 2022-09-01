@@ -29,6 +29,15 @@ Route::get('/usuarios/{id}/editar', [UsuarioController::class, 'edit'])->where('
 
 Route::put('/usuarios/{id}', [UsuarioController::class, 'update'])->name('usuarios.update');//el metodo put se utiliza cuando se va a actualizar un registro
 
+Route::delete('usuarios/{id}', [UsuarioController::class, 'destroy'])->name('usuarios.eliminar');//metodo delete se usa para eliminar registro
+
+
+
+
+
+
+
+
 /*
 AGRUPAR RUTAS CON UN MISMO CONTROLADOR
 Route::controller(UsuarioController::class)->group(function(){

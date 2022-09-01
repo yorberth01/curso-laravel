@@ -18,6 +18,7 @@ return new class extends Migration
             $table->id();
             $table->string('nombre');
             $table->string('apellido')->nullable();
+            $table->string('slug')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
              $table->unsignedBigInteger('profesiones_id')->nullable();

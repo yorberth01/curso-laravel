@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Usuario;
+use Illuminate\Support\Str;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Usuario>
@@ -18,9 +19,11 @@ class UsuarioFactory extends Factory
      */
     public function definition()
     {
+      $nombre = $this->faker->name();
         return [
-             'nombre'=>$this->faker->name(),
+             'nombre'=>$nombre,
             'apellido'=>$this->faker->lastName(),
+              'slug'=> Str::slug($nombre, '-')
         ];
     }
 }
